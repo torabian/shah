@@ -1,0 +1,7 @@
+<div class="points">{{ points }}</div>
+<div class="selector">
+  <div (click)="leftClick()" class="right-item item">{{ leftValue }}</div>
+  <div (click)="rightClick()" class="left-item item">{{ rightValue }}</div>
+</div>
+
+<pre>{{ numbers | json }}</pre>
