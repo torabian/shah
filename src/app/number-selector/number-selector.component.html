@@ -1,6 +1,10 @@
-<div class="points">{{ points }}</div>
+<h1>Guess and play</h1>
+
+<p>Guess the next smaller number, left or right?</p>
+
+<div class="points">{{ points }} Points</div>
+<br />
 <div class="selector">
   <div (click)="leftClick()" class="right-item item">{{ leftValue }}</div>
   <div (click)="rightClick()" class="left-item item">{{ rightValue }}</div>
 </div>
-

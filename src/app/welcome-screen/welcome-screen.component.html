@@ -1,0 +1,42 @@
+<div class="welcome-screen">
+  <h1>Welcome</h1>
+
+  <p>
+    please insert two numbers: A and B, each between 0 and 100. The closer each
+    number is to the 2/3 of the average of A and B, the more money you get.
+    <br /><br />
+    <strong>The maximum award is 2 Euros.</strong>
+  </p>
+
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="input-wrapper">
+      <h4>Enter number A:</h4>
+      <input formControlName="firstNumber" type="number" />
+
+      <span
+        class="validation-message"
+        *ngIf="inValidNumber(form.value.firstNumber)"
+        >Kindly write between 0-100 only</span
+      >
+    </div>
+    <div class="input-wrapper">
+      <h4>Enter number B:</h4>
+      <input formControlName="secondNumber" type="number" />
+      <span
+        class="validation-message"
+        *ngIf="inValidNumber(form.value.secondNumber)"
+        >Kindly write between 0-100 only</span
+      >
+    </div>
+
+    <input type="submit" value="Start!" />
+  </form>
+
+  <div *ngIf="finalPayoff !== null">
+    <h2>{{ finalPayoff }}€</h2>
+
+    <p>Thank you for playing! Now you can go to next step.</p>
+
+    <a routerLink="/number-selector">Take me to next step</a>
+  </div>
+</div>

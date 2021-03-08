@@ -11,13 +11,23 @@ export class NumberSelectorComponent implements OnInit {
 
   public points = 0;
   public step = 0;
-  public leftValue = 50;
-  public rightValue = 50;
+  public leftValue: any = '?';
+  public rightValue: any = '?';
 
   constructor() {}
 
   ngOnInit(): void {
     console.log(this.numbers);
+  }
+
+  get nextValue() {
+    const input = this.numbers[this.step];
+    const half = input / 2;
+
+    return {
+      leftValue: 50 - half,
+      rightValue: 50 + half,
+    };
   }
 
   doStep() {
@@ -29,14 +39,14 @@ export class NumberSelectorComponent implements OnInit {
   }
 
   leftClick() {
-    if (this.leftValue < this.rightValue) {
+    if (this.nextValue.leftValue < this.nextValue.rightValue) {
       this.points++;
     }
     this.doStep();
   }
 
   rightClick() {
-    if (this.rightValue < this.leftValue) {
+    if (this.nextValue.rightValue < this.nextValue.leftValue) {
       this.points++;
     }
     this.doStep();

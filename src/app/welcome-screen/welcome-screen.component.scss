@@ -1,0 +1,24 @@
+input {
+  padding: 10px;
+  font-size: 17px;
+}
+
+.input-wrapper {
+  margin: 15px auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.validation-message {
+  color: red;
+  margin-top: 9px;
+  font-size: 11px;
+}
+
+.welcome-screen {
+  max-width: 600px;
+  background: silver;
+  padding: 30px;
+  margin: auto;
+}
